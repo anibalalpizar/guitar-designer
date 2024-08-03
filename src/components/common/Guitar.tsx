@@ -10,6 +10,7 @@ const Guitar = ({
   pickguardColor,
   fretboardWood,
   inlaysColor,
+  nutColor,
 }) => {
   return (
     <>
@@ -25,8 +26,8 @@ const Guitar = ({
             y2="57.62"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0" stop-color="#fff" stop-opacity="0" />
-            <stop offset="1" stop-color="#fff" stop-opacity="0" />
+            <stop offset="0" stopColor="#fff" stop-opacity="0" />
+            <stop offset="1" stopColor="#fff" stop-opacity="0" />
           </linearGradient>
           <filter
             id="luminosity-invert"
@@ -68,13 +69,13 @@ const Guitar = ({
             gradientTransform="translate(-1.15 86.42) rotate(-16.34)"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset=".03" stop-color="#9b9b98" />
-            <stop offset=".13" stop-color="#a4a5a6" />
-            <stop offset=".22" stop-color="#aeb0b7" />
-            <stop offset=".35" stop-color="#9fa3a9" />
-            <stop offset=".61" stop-color="#788187" />
-            <stop offset=".72" stop-color="#657076" />
-            <stop offset="1" stop-color="#8b949a" />
+            <stop offset=".03" stopColor="#9b9b98" />
+            <stop offset=".13" stopColor="#a4a5a6" />
+            <stop offset=".22" stopColor="#aeb0b7" />
+            <stop offset=".35" stopColor="#9fa3a9" />
+            <stop offset=".61" stopColor="#788187" />
+            <stop offset=".72" stopColor="#657076" />
+            <stop offset="1" stopColor="#8b949a" />
           </linearGradient>
           <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
             <feOffset dx="0" dy="0" />
@@ -93,9 +94,9 @@ const Guitar = ({
             gradientTransform="translate(285.76 -260.25) rotate(78.72)"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0" stop-color="#85878d" />
-            <stop offset=".53" stop-color="#979899" />
-            <stop offset="1" stop-color="#5d5c62" />
+            <stop offset="0" stopColor="#85878d" />
+            <stop offset=".53" stopColor="#979899" />
+            <stop offset="1" stopColor="#5d5c62" />
           </linearGradient>
           <filter id="drop-shadow-2" filterUnits="userSpaceOnUse">
             <feOffset dx="0" dy="0" />
@@ -282,11 +283,17 @@ const Guitar = ({
             y2="58.23"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0" stop-color="#e5e2df" />
-            <stop offset="0" stop-color="#e5e0da" />
-            <stop offset=".3" stop-color="#dbd6cb" />
-            <stop offset=".88" stop-color="#c1bca4" />
-            <stop offset=".92" stop-color="#bfbaa1" />
+            {nutColor === "white" ? (
+              <>
+                <stop offset="0" stopColor="#e5e0da" />
+                <stop offset=".92" stopColor="#bfbaa1" />
+              </>
+            ) : (
+              <>
+                <stop offset="0" stopColor="#656765" />
+                <stop offset=".92" stopColor="#474745" />
+              </>
+            )}
           </linearGradient>
           <linearGradient
             id="linear-gradient-3"
@@ -296,12 +303,12 @@ const Guitar = ({
             y2="58.24"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset=".03" stop-color="#828487" />
-            <stop offset=".17" stop-color="#909295" />
-            <stop offset=".38" stop-color="#b1b3b6" />
-            <stop offset=".72" stop-color="#a7a9ac" />
-            <stop offset="1" stop-color="#d1d3d4" />
-            <stop offset="1" stop-color="#565759" />
+            <stop offset=".03" stopColor="#828487" />
+            <stop offset=".17" stopColor="#909295" />
+            <stop offset=".38" stopColor="#b1b3b6" />
+            <stop offset=".72" stopColor="#a7a9ac" />
+            <stop offset="1" stopColor="#d1d3d4" />
+            <stop offset="1" stopColor="#565759" />
           </linearGradient>
           <linearGradient
             id="linear-gradient-4"
@@ -479,10 +486,10 @@ const Guitar = ({
             y2="58.21"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset=".03" stop-color="#ccced1" />
-            <stop offset=".22" stop-color="#bdbfc2" />
-            <stop offset=".58" stop-color="#97999b" />
-            <stop offset=".94" stop-color="#6b6d6e" />
+            <stop offset=".03" stopColor="#ccced1" />
+            <stop offset=".22" stopColor="#bdbfc2" />
+            <stop offset=".58" stopColor="#97999b" />
+            <stop offset=".94" stopColor="#6b6d6e" />
           </linearGradient>
           <filter id="drop-shadow-13" filterUnits="userSpaceOnUse">
             <feOffset dx="0" dy="0" />
@@ -499,10 +506,10 @@ const Guitar = ({
             y2="66.1"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0" stop-color="#9c9ea0" />
-            <stop offset=".28" stop-color="#707173" />
-            <stop offset=".92" stop-color="#030303" />
-            <stop offset=".94" stop-color="#000" />
+            <stop offset="0" stopColor="#9c9ea0" />
+            <stop offset=".28" stopColor="#707173" />
+            <stop offset=".92" stopColor="#030303" />
+            <stop offset=".94" stopColor="#000" />
           </linearGradient>
           <linearGradient
             id="linear-gradient-27"
@@ -524,9 +531,9 @@ const Guitar = ({
             y2="58.27"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset=".15" stop-color="#8c8d8f" />
-            <stop offset=".46" stop-color="#9a9b9d" />
-            <stop offset=".94" stop-color="#b8babd" />
+            <stop offset=".15" stopColor="#8c8d8f" />
+            <stop offset=".46" stopColor="#9a9b9d" />
+            <stop offset=".94" stopColor="#b8babd" />
           </linearGradient>
           <linearGradient
             id="linear-gradient-30"
@@ -536,11 +543,11 @@ const Guitar = ({
             y2="58.27"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0" stop-color="#6a6a6b" />
-            <stop offset=".3" stop-color="#717273" />
-            <stop offset=".66" stop-color="#959799" />
-            <stop offset=".87" stop-color="#a3a5a7" />
-            <stop offset="1" stop-color="#afb1b3" />
+            <stop offset="0" stopColor="#6a6a6b" />
+            <stop offset=".3" stopColor="#717273" />
+            <stop offset=".66" stopColor="#959799" />
+            <stop offset=".87" stopColor="#a3a5a7" />
+            <stop offset="1" stopColor="#afb1b3" />
           </linearGradient>
           <filter id="drop-shadow-14" filterUnits="userSpaceOnUse">
             <feOffset dx="0" dy="0" />
@@ -558,9 +565,9 @@ const Guitar = ({
             gradientTransform="translate(-1.24 1.29) rotate(-1.45)"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0" stop-color="#85878d" />
-            <stop offset=".53" stop-color="#454545" />
-            <stop offset="1" stop-color="#5d5c62" />
+            <stop offset="0" stopColor="#85878d" />
+            <stop offset=".53" stopColor="#454545" />
+            <stop offset="1" stopColor="#5d5c62" />
           </linearGradient>
           <linearGradient
             id="linear-gradient-32"
@@ -594,9 +601,9 @@ const Guitar = ({
             gradientTransform="translate(.01 -1.53) rotate(-.02) scale(1 1.03)"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0" stop-color="#85878d" />
-            <stop offset=".53" stop-color="#959596" />
-            <stop offset="1" stop-color="#5d5c62" />
+            <stop offset="0" stopColor="#85878d" />
+            <stop offset=".53" stopColor="#959596" />
+            <stop offset="1" stopColor="#5d5c62" />
           </linearGradient>
           <linearGradient
             id="linear-gradient-35"
@@ -631,9 +638,9 @@ const Guitar = ({
             y2="49.11"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset=".03" stop-color="#a7a9ac" />
-            <stop offset=".59" stop-color="#b5b7ba" />
-            <stop offset="1" stop-color="#c4c6c8" />
+            <stop offset=".03" stopColor="#a7a9ac" />
+            <stop offset=".59" stopColor="#b5b7ba" />
+            <stop offset="1" stopColor="#c4c6c8" />
           </linearGradient>
           <linearGradient
             id="linear-gradient-38"
@@ -703,10 +710,10 @@ const Guitar = ({
             gradientTransform="translate(-.72 4.11) rotate(-.74)"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0" stop-color="#c4c6c8" />
-            <stop offset=".3" stop-color="#bcbec0" />
-            <stop offset=".66" stop-color="#a7a9ac" />
-            <stop offset="1" stop-color="#9b9da0" />
+            <stop offset="0" stopColor="#c4c6c8" />
+            <stop offset=".3" stopColor="#bcbec0" />
+            <stop offset=".66" stopColor="#a7a9ac" />
+            <stop offset="1" stopColor="#9b9da0" />
           </radialGradient>
           <filter id="drop-shadow-18" filterUnits="userSpaceOnUse">
             <feOffset dx="0" dy="0" />
@@ -889,10 +896,10 @@ const Guitar = ({
             y2="90.73"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset=".15" stop-color="#5d5e5f" />
-            <stop offset=".32" stop-color="#6b6c6d" />
-            <stop offset=".65" stop-color="#909294" />
-            <stop offset=".94" stop-color="#b8babd" />
+            <stop offset=".15" stopColor="#5d5e5f" />
+            <stop offset=".32" stopColor="#6b6c6d" />
+            <stop offset=".65" stopColor="#909294" />
+            <stop offset=".94" stopColor="#b8babd" />
           </linearGradient>
           <filter id="drop-shadow-29" filterUnits="userSpaceOnUse">
             <feOffset dx="0" dy="0" />
@@ -950,9 +957,9 @@ const Guitar = ({
             y2="90.74"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0" stop-color="#3f4042" />
-            <stop offset=".53" stop-color="#6a6a6b" />
-            <stop offset="1" stop-color="#37373b" />
+            <stop offset="0" stopColor="#3f4042" />
+            <stop offset=".53" stopColor="#6a6a6b" />
+            <stop offset="1" stopColor="#37373b" />
           </linearGradient>
           <filter id="drop-shadow-33" filterUnits="userSpaceOnUse">
             <feOffset dx="0" dy="0" />
@@ -1200,7 +1207,6 @@ const Guitar = ({
           id="Nut"
           d="M283.11,50.62h.96c.25,0,.46.2.46.46v14.33c0,.25-.2.46-.46.46h-.96v-15.24h0Z"
           fill="url(#linear-gradient-2)"
-          stroke-width="0"
         />
         <g id="FretsGroup">
           <rect

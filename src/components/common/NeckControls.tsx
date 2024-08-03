@@ -3,6 +3,8 @@ const NeckControls = ({
   handleChangeFretboardWood,
   inlaysColor,
   handleChangeInlaysColor,
+  nutColor,
+  handleChangeNutColor,
 }) => {
   return (
     <section className="flex flex-col ">
@@ -32,6 +34,25 @@ const NeckControls = ({
           value={inlaysColor}
           onChange={handleChangeInlaysColor}
         />
+      </div>
+
+      <div className="flex justify-start items-center gap-3 p-2">
+        <label>Nut Color:</label>
+        <select
+          value={nutColor}
+          onChange={handleChangeNutColor}
+          className="
+          p-2
+          bg-white
+          text-black
+          border
+          border-black
+          rounded
+        "
+        >
+          <option value="white">White</option>
+          <option value="black">Black</option>
+        </select>
       </div>
     </section>
   );

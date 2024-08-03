@@ -12,6 +12,7 @@ const App = () => {
   const [pickguardColor, setPickguardColor] = useState("#1e1b1c");
   const [fretboardWood, setFretboardWood] = useState("maple");
   const [inlaysColor, setInlaysColor] = useState("#414042");
+  const [nutColor, setnutColor] = useState("white");
 
   const handleChangeColor = (e) => {
     setColor(e.target.value);
@@ -43,6 +44,10 @@ const App = () => {
 
   const handleChangeInlaysColor = (e) => {
     setInlaysColor(e.target.value);
+  };
+
+  const handleChangeNutColor = (e) => {
+    setnutColor(e.target.value);
   };
 
   return (
@@ -79,6 +84,7 @@ const App = () => {
           pickguardColor={pickguardColor}
           fretboardWood={fretboardWood}
           inlaysColor={inlaysColor}
+          nutColor={nutColor}
         />
       </section>
 
@@ -102,6 +108,8 @@ const App = () => {
           handleChangeFretboardWood={handleChangeFretboardWood}
           inlaysColor={inlaysColor}
           handleChangeInlaysColor={handleChangeInlaysColor}
+          nutColor={nutColor}
+          handleChangeNutColor={handleChangeNutColor}
         />
       </div>
     </main>
