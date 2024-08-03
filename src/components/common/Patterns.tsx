@@ -2,7 +2,7 @@ const Patterns = () => {
   return (
     <>
       <pattern
-        id="woodPattern"
+        id="BodyWoodPattern"
         patternUnits="objectBoundingBox"
         width="1"
         height="1"
@@ -28,13 +28,13 @@ const Patterns = () => {
         />
       </pattern>
       <pattern
-        id="darkFingerboardWoodPattern"
+        id="roseWoodPattern"
         patternUnits="objectBoundingBox"
         width="1"
         height="1"
       >
         <image
-          href="/wood.jpg"
+          href="/rosewood.jpg"
           preserveAspectRatio="none"
           width="190px"
           height="190px"

@@ -1,13 +1,17 @@
 import { useState } from "react";
-import BodyControls from "./BodyControls";
-import TeleBody from "./TeleBody";
-import TeleNeck from "./TeleNeck";
+import BodyControls from "./components/common/BodyControls";
+import Guitar from "./components/common/Guitar";
+import NeckControls from "./components/common/NeckControls";
 
 const App = () => {
   const [color, setColor] = useState("#ffc06a"); // Default color
   const [texture, setTexture] = useState(false); // Toggle texture
   const [burst, setBurst] = useState(false); // Toggle burst
   const [burstColor, setBurstColor] = useState("#000000"); // Default burst color
+  const [hasPickguard, HasPickguard] = useState(true);
+  const [pickguardColor, setPickguardColor] = useState("#1e1b1c");
+  const [fretboardWood, setFretboardWood] = useState("maple");
+  const [inlaysColor, setInlaysColor] = useState("#414042");
 
   const handleChangeColor = (e) => {
     setColor(e.target.value);
@@ -23,6 +27,22 @@ const App = () => {
 
   const handleToggleBurst = () => {
     setBurst(!burst);
+  };
+
+  const handleTogglePickguard = () => {
+    HasPickguard(!hasPickguard);
+  };
+
+  const handleChangePickguardColor = (e) => {
+    setPickguardColor(e.target.value);
+  };
+
+  const handleChangeFretboardWood = (e) => {
+    setFretboardWood(e.target.value);
+  };
+
+  const handleChangeInlaysColor = (e) => {
+    setInlaysColor(e.target.value);
   };
 
   return (
@@ -47,28 +67,43 @@ const App = () => {
       </h3>
 
       <section
-        className="border border-black w-[50%] h-[50vh] flex justify-center items-center"
+        className="w-[75%] h-[50vh] flex justify-center items-center"
         style={{ color }}
       >
-        <TeleBody
+        <Guitar
           color={color}
           burst={burst}
           texture={texture}
           burstColor={burstColor}
+          hasPickguard={hasPickguard}
+          pickguardColor={pickguardColor}
+          fretboardWood={fretboardWood}
+          inlaysColor={inlaysColor}
         />
-        <TeleNeck />
       </section>
 
-      <BodyControls
-        color={color}
-        handleChangeColor={handleChangeColor}
-        texture={texture}
-        handleToggleTexture={handleToggleTexture}
-        burst={burst}
-        handleToggleBurst={handleToggleBurst}
-        burstColor={burstColor}
-        handleChangeBurstColor={handleChangeBurstColor}
-      />
+      <div className="flex justify-start w-[75%]">
+        <BodyControls
+          color={color}
+          handleChangeColor={handleChangeColor}
+          texture={texture}
+          handleToggleTexture={handleToggleTexture}
+          burst={burst}
+          handleToggleBurst={handleToggleBurst}
+          burstColor={burstColor}
+          handleChangeBurstColor={handleChangeBurstColor}
+          hasPickguard={hasPickguard}
+          pickguardColor={pickguardColor}
+          handleTogglePickguard={handleTogglePickguard}
+          handleChangePickguardColor={handleChangePickguardColor}
+        />
+        <NeckControls
+          fretboardWood={fretboardWood}
+          handleChangeFretboardWood={handleChangeFretboardWood}
+          inlaysColor={inlaysColor}
+          handleChangeInlaysColor={handleChangeInlaysColor}
+        />
+      </div>
     </main>
   );
 };
