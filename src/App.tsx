@@ -5,9 +5,10 @@ import NeckControls from "./components/common/NeckControls";
 
 const App = () => {
   const [color, setColor] = useState("#ffc06a"); // Default color
-  const [texture, setTexture] = useState(false); // Toggle texture
-  const [burst, setBurst] = useState(false); // Toggle burst
-  const [burstColor, setBurstColor] = useState("#000000"); // Default burst color
+  const [texture, setTexture] = useState("alder");
+  const [bodyPaintOpacity, setBodyPaintOpacity] = useState(1);
+  const [burst, setBurst] = useState(false);
+  const [burstColor, setBurstColor] = useState("#000000");
   const [hasPickguard, HasPickguard] = useState(true);
   const [pickguardColor, setPickguardColor] = useState("#1e1b1c");
   const [fretboardWood, setFretboardWood] = useState("maple");
@@ -22,8 +23,12 @@ const App = () => {
     setBurstColor(e.target.value);
   };
 
-  const handleToggleTexture = () => {
-    setTexture(!texture);
+  const handleChangeTexture = (e) => {
+    setTexture(e.target.value);
+  };
+
+  const handleChangeBodyPaintOpacity = (e) => {
+    setBodyPaintOpacity(e.target.value);
   };
 
   const handleToggleBurst = () => {
@@ -79,6 +84,7 @@ const App = () => {
           color={color}
           burst={burst}
           texture={texture}
+          bodyPaintOpacity={bodyPaintOpacity}
           burstColor={burstColor}
           hasPickguard={hasPickguard}
           pickguardColor={pickguardColor}
@@ -93,7 +99,9 @@ const App = () => {
           color={color}
           handleChangeColor={handleChangeColor}
           texture={texture}
-          handleToggleTexture={handleToggleTexture}
+          handleChangeTexture={handleChangeTexture}
+          bodyPaintOpacity={bodyPaintOpacity}
+          handleChangeBodyPaintOpacity={handleChangeBodyPaintOpacity}
           burst={burst}
           handleToggleBurst={handleToggleBurst}
           burstColor={burstColor}

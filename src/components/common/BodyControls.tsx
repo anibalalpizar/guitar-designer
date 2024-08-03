@@ -2,7 +2,9 @@ const BodyControls = ({
   color,
   handleChangeColor,
   texture,
-  handleToggleTexture,
+  bodyPaintOpacity,
+  handleChangeTexture,
+  handleChangeBodyPaintOpacity,
   burst,
   handleToggleBurst,
   burstColor,
@@ -20,13 +22,34 @@ const BodyControls = ({
       </div>
 
       <div className="flex justify-start items-center gap-3 p-2">
-        <label>Texture:</label>
-        <button
-          className="p-1 bg-blue-800 text-white rounded"
-          onClick={handleToggleTexture}
+        <label>Body Paint Opacity:</label>
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.1"
+          value={bodyPaintOpacity}
+          onChange={handleChangeBodyPaintOpacity}
+        />
+      </div>
+
+      <div className="flex justify-start items-center gap-3 p-2">
+        <label>Body Texture:</label>
+        <select
+          value={texture}
+          onChange={handleChangeTexture}
+          className="
+          p-2
+          bg-white
+          text-black
+          border
+          border-black
+          rounded
+        "
         >
-          {texture ? "Remove Wood Texture" : "Apply Wood Texture"}
-        </button>
+          <option value="alder">Alder</option>
+          <option value="flamedMaple">Flamed Maple</option>
+        </select>
       </div>
 
       <div className="flex justify-start items-center gap-3 p-2">

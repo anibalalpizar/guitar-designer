@@ -1,6 +1,7 @@
-const Patterns = () => {
+const Patterns = ({ color, bodyPaintOpacity }) => {
   return (
     <>
+      {/* Body patterns */}
       <pattern
         id="BodyWoodPattern"
         patternUnits="objectBoundingBox"
@@ -13,7 +14,33 @@ const Patterns = () => {
           width="100%"
           height="100%"
         />
+        <rect
+          width="100%"
+          height="100%"
+          fill={color}
+          opacity={bodyPaintOpacity}
+        />
       </pattern>
+      <pattern
+        id="FlamedWoodPattern"
+        patternUnits="objectBoundingBox"
+        width="1"
+        height="1"
+      >
+        <image
+          href="/flamedMaple.jpg"
+          preserveAspectRatio="none"
+          width="100%"
+          height="100%"
+        />
+        <rect
+          width="100%"
+          height="100%"
+          fill={color}
+          opacity={bodyPaintOpacity}
+        />
+      </pattern>
+      {/* Neck patterns */}
       <pattern
         id="mapleWoodPattern"
         patternUnits="objectBoundingBox"
