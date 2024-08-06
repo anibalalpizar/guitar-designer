@@ -4,7 +4,7 @@ import NeckControls from "./components/common/NeckControls";
 
 const App = () => {
   return (
-    <main className="flex flex-col justify-center items-center h-screen">
+    <main className="flex flex-col justify-center items-center h-screen ">
       <h1 className="text-3xl">Guitar Designer</h1>
       <h2 className="text-2xl text-center">
         This page is in <strong>very very very early development. </strong>{" "}
@@ -24,7 +24,7 @@ const App = () => {
         </a>
       </h3>
 
-      <section className="w-[75%] h-[50vh] flex justify-center items-center">
+      <section className="w-[75%] h-[50vh] flex justify-center items-center bg-zinc-800 rounded-3xl">
         <Guitar />
       </section>
 

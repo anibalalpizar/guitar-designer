@@ -8,6 +8,10 @@ const NeckControls = () => {
     handleChangeInlaysColor,
     nutColor,
     handleChangeNutColor,
+    hasNeckBinding,
+    neckBindingColor,
+    handleToggleNeckBinding,
+    handleChangeNeckBindingColor,
   } = useGuitarNeckContext();
 
   return (
@@ -57,6 +61,23 @@ const NeckControls = () => {
           <option value="white">White</option>
           <option value="black">Black</option>
         </select>
+      </div>
+
+      <div className="flex justify-start items-center gap-3 p-2">
+        <label>Neck Binding:</label>
+        <button
+          className="p-1 bg-blue-800 text-white rounded"
+          onClick={handleToggleNeckBinding}
+        >
+          {hasNeckBinding ? "Remove Binding" : "Add Binding"}
+        </button>
+        {hasNeckBinding && (
+          <input
+            type="color"
+            value={neckBindingColor}
+            onChange={handleChangeNeckBindingColor}
+          />
+        )}
       </div>
     </section>
   );

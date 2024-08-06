@@ -10,19 +10,21 @@ const BodyControls = () => {
     burstColor,
     hasPickguard,
     pickguardColor,
+    hasBinding,
+    bindingColor,
   } = useGuitarBodyContext();
 
   // Functions
   const {
     handleChangeColor,
-
     handleChangeTexture,
     handleChangeBodyPaintOpacity,
     handleToggleBurst,
-
     handleChangeBurstColor,
     handleTogglePickguard,
     handleChangePickguardColor,
+    handleToggleBinding,
+    handleChangeBindingColor,
   } = useGuitarBodyContext();
 
   return (
@@ -97,7 +99,22 @@ const BodyControls = () => {
         )}
       </div>
 
-      <div className="flex justify-start items-center gap-3 p-2"></div>
+      <div className="flex justify-start items-center gap-3 p-2">
+        <label>Binding:</label>
+        <button
+          className="p-1 bg-blue-800 text-white rounded"
+          onClick={handleToggleBinding}
+        >
+          {hasBinding ? "Remove Binding" : "Apply Binding"}
+        </button>
+        {hasBinding && (
+          <input
+            type="color"
+            value={bindingColor}
+            onChange={handleChangeBindingColor}
+          />
+        )}
+      </div>
     </section>
   );
 };

@@ -13,6 +13,8 @@ export const GuitarBodyProvider = ({
   const [burstColor, setBurstColor] = useState("#000000");
   const [hasPickguard, HasPickguard] = useState(true);
   const [pickguardColor, setPickguardColor] = useState("#1e1b1c");
+  const [hasBinding, setHasBinding] = useState(false);
+  const [bindingColor, setBindingColor] = useState("#ffffff");
 
   const handleChangeColor = (e) => {
     setColor(e.target.value);
@@ -42,6 +44,14 @@ export const GuitarBodyProvider = ({
     setPickguardColor(e.target.value);
   };
 
+  const handleToggleBinding = () => {
+    setHasBinding(!hasBinding);
+  };
+
+  const handleChangeBindingColor = (e) => {
+    setBindingColor(e.target.value);
+  };
+
   return (
     <GuitarBodyContext.Provider
       value={{
@@ -52,6 +62,8 @@ export const GuitarBodyProvider = ({
         burstColor,
         hasPickguard,
         pickguardColor,
+        hasBinding,
+        bindingColor,
         handleChangeColor,
         handleChangeBurstColor,
         handleChangeTexture,
@@ -59,6 +71,8 @@ export const GuitarBodyProvider = ({
         handleToggleBurst,
         handleTogglePickguard,
         handleChangePickguardColor,
+        handleToggleBinding,
+        handleChangeBindingColor,
       }}
     >
       {children}
