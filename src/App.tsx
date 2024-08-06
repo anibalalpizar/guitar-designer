@@ -1,60 +1,8 @@
-import { useState } from "react";
 import BodyControls from "./components/common/BodyControls";
 import Guitar from "./components/common/Guitar";
 import NeckControls from "./components/common/NeckControls";
 
 const App = () => {
-  const [color, setColor] = useState("#ffc06a"); // Default color
-  const [texture, setTexture] = useState("alder");
-  const [bodyPaintOpacity, setBodyPaintOpacity] = useState(1);
-  const [burst, setBurst] = useState(false);
-  const [burstColor, setBurstColor] = useState("#000000");
-  const [hasPickguard, HasPickguard] = useState(true);
-  const [pickguardColor, setPickguardColor] = useState("#1e1b1c");
-  const [fretboardWood, setFretboardWood] = useState("maple");
-  const [inlaysColor, setInlaysColor] = useState("#414042");
-  const [nutColor, setnutColor] = useState("white");
-
-  const handleChangeColor = (e) => {
-    setColor(e.target.value);
-  };
-
-  const handleChangeBurstColor = (e) => {
-    setBurstColor(e.target.value);
-  };
-
-  const handleChangeTexture = (e) => {
-    setTexture(e.target.value);
-  };
-
-  const handleChangeBodyPaintOpacity = (e) => {
-    setBodyPaintOpacity(e.target.value);
-  };
-
-  const handleToggleBurst = () => {
-    setBurst(!burst);
-  };
-
-  const handleTogglePickguard = () => {
-    HasPickguard(!hasPickguard);
-  };
-
-  const handleChangePickguardColor = (e) => {
-    setPickguardColor(e.target.value);
-  };
-
-  const handleChangeFretboardWood = (e) => {
-    setFretboardWood(e.target.value);
-  };
-
-  const handleChangeInlaysColor = (e) => {
-    setInlaysColor(e.target.value);
-  };
-
-  const handleChangeNutColor = (e) => {
-    setnutColor(e.target.value);
-  };
-
   return (
     <main className="flex flex-col justify-center items-center h-screen">
       <h1 className="text-3xl">Guitar Designer</h1>
@@ -76,49 +24,13 @@ const App = () => {
         </a>
       </h3>
 
-      <section
-        className="w-[75%] h-[50vh] flex justify-center items-center"
-        style={{ color }}
-      >
-        <Guitar
-          color={color}
-          burst={burst}
-          texture={texture}
-          bodyPaintOpacity={bodyPaintOpacity}
-          burstColor={burstColor}
-          hasPickguard={hasPickguard}
-          pickguardColor={pickguardColor}
-          fretboardWood={fretboardWood}
-          inlaysColor={inlaysColor}
-          nutColor={nutColor}
-        />
+      <section className="w-[75%] h-[50vh] flex justify-center items-center">
+        <Guitar />
       </section>
 
       <div className="flex justify-start w-[75%]">
-        <BodyControls
-          color={color}
-          handleChangeColor={handleChangeColor}
-          texture={texture}
-          handleChangeTexture={handleChangeTexture}
-          bodyPaintOpacity={bodyPaintOpacity}
-          handleChangeBodyPaintOpacity={handleChangeBodyPaintOpacity}
-          burst={burst}
-          handleToggleBurst={handleToggleBurst}
-          burstColor={burstColor}
-          handleChangeBurstColor={handleChangeBurstColor}
-          hasPickguard={hasPickguard}
-          pickguardColor={pickguardColor}
-          handleTogglePickguard={handleTogglePickguard}
-          handleChangePickguardColor={handleChangePickguardColor}
-        />
-        <NeckControls
-          fretboardWood={fretboardWood}
-          handleChangeFretboardWood={handleChangeFretboardWood}
-          inlaysColor={inlaysColor}
-          handleChangeInlaysColor={handleChangeInlaysColor}
-          nutColor={nutColor}
-          handleChangeNutColor={handleChangeNutColor}
-        />
+        <BodyControls />
+        <NeckControls />
       </div>
     </main>
   );

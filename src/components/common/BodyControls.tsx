@@ -1,19 +1,30 @@
-const BodyControls = ({
-  color,
-  handleChangeColor,
-  texture,
-  bodyPaintOpacity,
-  handleChangeTexture,
-  handleChangeBodyPaintOpacity,
-  burst,
-  handleToggleBurst,
-  burstColor,
-  handleChangeBurstColor,
-  hasPickguard,
-  pickguardColor,
-  handleTogglePickguard,
-  handleChangePickguardColor,
-}) => {
+import { useGuitarBodyContext } from "../../hooks/useGuitarBody";
+
+const BodyControls = () => {
+  // Variables
+  const {
+    color,
+    burst,
+    texture,
+    bodyPaintOpacity,
+    burstColor,
+    hasPickguard,
+    pickguardColor,
+  } = useGuitarBodyContext();
+
+  // Functions
+  const {
+    handleChangeColor,
+
+    handleChangeTexture,
+    handleChangeBodyPaintOpacity,
+    handleToggleBurst,
+
+    handleChangeBurstColor,
+    handleTogglePickguard,
+    handleChangePickguardColor,
+  } = useGuitarBodyContext();
+
   return (
     <section className="flex flex-col ">
       <div className="flex justify-start items-center gap-3 p-2">

@@ -1,11 +1,15 @@
-const NeckControls = ({
-  fretboardWood,
-  handleChangeFretboardWood,
-  inlaysColor,
-  handleChangeInlaysColor,
-  nutColor,
-  handleChangeNutColor,
-}) => {
+import { useGuitarNeckContext } from "../../hooks/useGuitarNeck";
+
+const NeckControls = () => {
+  const {
+    fretboardWood,
+    handleChangeFretboardWood,
+    inlaysColor,
+    handleChangeInlaysColor,
+    nutColor,
+    handleChangeNutColor,
+  } = useGuitarNeckContext();
+
   return (
     <section className="flex flex-col ">
       <div className="flex justify-start items-center gap-3 p-2">
